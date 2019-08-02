@@ -123,6 +123,32 @@ span.psw {
      width: 100%;
   }
 }
+  
+  /* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+
 </style>
 </head>
 <body>
@@ -154,7 +180,10 @@ span.psw {
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('loginModal').style.display='none'" class="cancelbtn">Cancel</button>
-      <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
+      <div class="alert" id="alertMessage" style="display:none">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        Incorrect login
+      </div>
     </div>
   </form>
 </div>
@@ -173,9 +202,12 @@ checkCredentials = function(){
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let loginForm = document.getElementById('loginForm');
+    let alertMessage = document.getElementById('alertMessage');
     if (username === "admin" && password === 12345){
       loginForm.submit();
-    } 
+    }else{
+      alertMessage.style.display='';
+    }
 } 
 </script>
 
