@@ -133,10 +133,10 @@ span.psw {
 
 <div id="loginModal" class="modal">
   
-  <form class="modal-content animate" action="/login_ok.html">
+  <form id="loginForm" class="modal-content animate" action="/html-login-example/login_ok.html">
     <div class="imgcontainer">
       <span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      <img src="https://st-listas.20minutos.es/images/2011-03/282114/2939582_640px.jpg?1337639904" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -146,7 +146,7 @@ span.psw {
       <label for="psw"><b>Password</b></label>
       <input id="password" type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
+      <button type="button" onclick="checkCredentials()">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -169,6 +169,14 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+checkCredentials = function(){
+    let username = document.getElementById('username').value();
+    let password = document.getElementById('password').value();
+    let loginForm = document.getElementById('loginForm');
+    if (username === "admin" && password === 12345){
+      loginForm.submit();
+    } 
+} 
 </script>
 
 </body>
