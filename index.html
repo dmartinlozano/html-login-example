@@ -76,9 +76,9 @@ span.psw {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 0% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -203,7 +203,7 @@ checkCredentials = function(){
     let password = document.getElementById('password').value;
     let loginForm = document.getElementById('loginForm');
     let alertMessage = document.getElementById('alertMessage');
-    if (username === "admin" && password === 12345){
+    if (username === "admin" && password === "12345"){
       loginForm.submit();
     }else{
       alertMessage.style.display='';
